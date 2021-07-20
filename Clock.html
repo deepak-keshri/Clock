@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+     
+    </style>
+  </head>
+    <body onload="SetTime()">
+      <center>
+        <svg id="mySvg" height="100%" width="100%" style="background-color: aqua;">
+          <polyline points="400,100,500,5,600,100,400,100,400,540,602,540,603,102" stroke-width="5" stroke="url(#mygrd1)" fill="url(#mygrd)"></polyline>
+          <line x1="600" y1="100" x2="650" y2="150" stroke-width="5" stroke="url(#grd)"></line>
+          <line x1="400" y1="100" x2="350" y2="150" stroke-width="5" stroke="url(#grd)"></line>
+          
+          <defs>
+            <g id="move">
+              <polyline points="495,245,475,470,520,470,500,245,495,245" fill="url(#grd)" stroke="black"></polyline>
+              <circle cx="497.5" cy="465" r="23" stroke="url(#mygrd1)" fill="url(#mygrd)"></circle>
+            </g>
+          </defs>
+          
+          <use x="0" y="30" xlink:href="#move">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="3s" fill="remove" values="-15 495 245; 15 495 245; -15 495 245" repeatCount="indefinite"></animateTransform> 
+          </use>           
+
+
+          <!---------------------------   Clock circle of Watch  --------------------------->
+          <circle cx="500" cy="230" r="112" stroke="brown" fill="yellow" stroke-width="15">
+            <animate attributeName="fill" attributetype="css" begin="0.5s" dur="10s" from="red" to="yellow" values="cyan;white;pink;yellow;silver;grey;orange;"repeatCount="40"></animate> 
+          </circle>
+
+          <!-----------This color used by border of Home Clock-->
+          <defs>
+            <linearGradient id="mygrd1" x1="30%" y1="30%" x2="40%" y2="0%" speadMethod="pad">
+              <stop offset="25%" stop-color="red"/>
+              <stop offset="80%" stop-color="blue"/>
+              <stop offset="80%" stop-color="yellow"/>
+              <stop offset="80%" stop-color="orange"/>
+              <stop offset="80%" stop-color="white"/>
+              <stop offset="0%" stop-color="brown"/>
+              
+            </linearGradient>
+          </defs>
+          <!-----------This color used by background of Home Clock-->
+          <defs>
+            <radialGradient id="mygrd" cx="50%" cy="50%" r="30%" fx="45%" fy="60%" speadMethod="pad">
+              <stop offset="25%" stop-color="red"/>
+              <stop offset="40%" stop-color="aqua"/>
+              <stop offset="100%" stop-color="black"/>
+            </radialGradient>
+          </defs>
+
+          <!--Name of Deepak-->
+          <text x="475" y="270" stroke="black" style="color: white;font-size:20px">Deepak</text>
+          
+          <!---------------------------   Numbers of Watch 1 to 12  --------------------------->
+          <text x="474" y="170" stroke="red" fill="white" stroke-width="2" style="font-size: 50px;">12</text>
+          <text x="540" y="160" stroke="black" fill="black" stroke-width="2">1</text>
+          <text x="575" y="190" stroke="black" fill="black" stroke-width="2">2</text>
+          <text x="575" y="244" stroke="black" fill="white" stroke-width="2" style="font-size: 50px;">3</text>
+          <text x="576" y="279" stroke="black" fill="black" stroke-width="2">4</text>
+          <text x="546" y="314" stroke="black" fill="black" stroke-width="2">5</text>
+          <text x="488" y="325" stroke="red" fill="white" stroke-width="2" style="font-size: 50px;">6</text>
+          <text x="452" y="312" stroke="black" fill="black" stroke-width="2">7</text>
+          <text x="420" y="280" stroke="black" fill="black" stroke-width="2">8</text>
+          <text x="405" y="250" stroke="black" fill="white" stroke-width="2" style="font-size: 50px;">9</text>
+          <text x="415" y="193" stroke="black" fill="black" stroke-width="2">10</text>
+          <text x="445" y="160" stroke="black" fill="black" stroke-width="2" >11</text>
+          
+          <defs>
+            <g id="tcircle">
+              <circle cx="500" cy="60" r="40" stroke-width="4" stroke="url(#grd)" fill="yellow"></circle>
+              <circle cx="500" cy="60" r="30" stroke-width="3" stroke="url(#grd)" fill="white"></circle>
+              <circle cx="500" cy="60" r="20" stroke-width="2" stroke="black" fill="white"></circle>
+              <circle cx="500" cy="60" r="10" stroke-width="1" stroke="black" fill="white"></circle>
+              <circle cx="500" cy="60" r="3" stroke-width="2" stroke="red" fill="red"></circle>
+              <line x1="460" y1="60" x2="540" y2="60" stroke-width="15" stroke="black"></line>
+              <line x1="500" y1="30" x2="500" y2="90" stroke-width="15" stroke="black"></line>
+            </g>
+          </defs>
+          
+          <use x="0" y="0" xlink:href="#tcircle">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="0.2s" from="0 500 60" to="360 500 60" repeatCount="indefinite"></animateTransform>
+          </use>
+          
+          <circle cx="500" cy="230" r="4" stroke="black" fill="black">
+            <circle cx="500" cy="230" r="8" stroke="black" fill="black">
+              <animateTransform attributeName="transform" type="rotate" begin="os" from="0 500 230" to="360 500 230" repeatCount="indefinite"></animateTransform>
+            </circle>
+          </circle>
+
+          <!---------------------------   Seconds sui of Watch  --------------------------->
+          <line x1="500" y1="230" x2="500" y2="140" id="second" stroke="black" stroke-width="2"></line>
+
+          <!--------------------------- Minut sui of Watch--------------------------->
+          <polyline id="minut" points="500,230,495,170,500,150,505,170,500,230" stroke="red" fill="url(#mygrd)" stroke-width="2"></polyline>
+
+          <!---------------------------  Hourn sui of Watch  ---------------------------------------------->
+          <polyline id="hourn" points="501,230,490,185,500,165,510,185,501,230" stroke="black" fill="url(#grd)" stroke-width="2"></polyline>
+         
+          <defs>
+            <radialGradient id="grd" cx="50%" cy="50%" r="50%" fx="50%" fy="40%" spreadMethod="pad">
+              <stop offset="20%" stop-color="white" stop-opacity="0.7"/>
+              <stop offset="40%" stop-color="orange" />
+              <stop offset="100%" stop-color="red" />
+            </radialGradient>
+          </defs>
+
+          <polyline points="400,540,603,540,633,580,370,580,400,540" stroke="none" stroke-width="3" fill="url(#grd)"></polyline>
+          
+          <!--Bottom of Circle are moving-->
+          <defs>
+            <g id="mcircle">
+              <circle cx="420" cy="560" r="20" stroke="none" fill="none" stroke-width="4"></circle>
+              <line x1="400" y1="560" x2="440" y2="560" stroke="black" stroke-width="5"></line>
+              <line x1="420" y1="540" x2="420" y2="580" stroke="black" stroke-width="5"></line>
+            </g>
+          </defs>
+          <use x="0" y="0" xlink:href="#mcircle">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="0.3s" fill="remove" from="0 420 560" to="360 420 560" repeatCount="indefinite"></animateTransform>
+          </use>
+
+          <use x="50" y="0" xlink:href="#mcircle">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="0.4s" fill="remove" from="0 470 560" to="360 470 560" repeatCount="indefinite"></animateTransform>
+          </use>
+
+          <use x="112" y="0" xlink:href="#mcircle">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="0.4s" fill="remove" from="0 532 560" to="360 532 560" repeatCount="indefinite"></animateTransform>
+          </use>
+
+          <use x="162" y="0" xlink:href="#mcircle">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="0.3s" fill="remove" from="0 582 560" to="360 582 560" repeatCount="indefinite"></animateTransform>
+          </use>
+
+          <!-----------It is uses center of clock circle and it is rotating-->
+          <use x="82" y="-330" xlink:href="#mcircle">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="0.2s" fill="remove" from="0 502 230" to="360 502 230" repeatCount="indefinite"></animateTransform>
+          </use>
+          
+          
+        </svg>  
+      </center>
+      <script>
+        function SetTime()
+        { 
+          var d=new Date();
+          
+          let second = document.getElementById("second");
+          let minut = document.getElementById("minut");
+          let hourn = document.getElementById("hourn");   
+          
+          var s=d.getSeconds()*6;
+          var m=d.getMinutes()*6+s/60;
+          var h=d.getHours()*30+m/10;
+          second.setAttribute("transform","rotate("+s+",500,230)");
+          minut.setAttribute("transform","rotate("+m+",500,230)");
+          hourn.setAttribute("transform","rotate("+h+",500,230)");
+
+          window.setTimeout(SetTime,1000)
+        }
+      </script>
+    </body>
+  
+</html>
